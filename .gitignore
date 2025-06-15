@@ -1,12 +1,13 @@
 # dependencies
-/node_modules
+node_modules/
+node_modules/.cache/
 
 # build output
-/build
+build/
 
 # misc
 .DS_Store
 .env
 .env.local
-.cache
 npm-debug.log
+
