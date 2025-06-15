@@ -17,7 +17,7 @@ export default function Works() {
       icon: process.env.PUBLIC_URL + "/assets/globe.png",
       title: "Tarkhineh",
       desc: "Restaurant-Website mit Speisekarte, Galerie und Kontaktformular.",
-      img: process.env.PUBLIC_URL + "/assets/Tarkhineh.png",
+      img: <img src={process.env.PUBLIC_URL + "/assets/Tarkhineh.png"} />,
       link: "https://amir-6687.github.io/Tarkhineh/",
     },
     {
