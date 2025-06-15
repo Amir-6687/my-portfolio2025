@@ -6,21 +6,21 @@ export default function Works() {
   const data = [
     {
       id: 1,
-      icon: "assets/mobile.png",
+      icon: process.env.PUBLIC_URL + "/assets/mobile.png",
       title: "Web Design",
       desc: "Modernes und responsives Webdesign für eine optimale Benutzererfahrung.",
       img: "https://via.placeholder.com/300x200?text=Mobile+App",
     },
     {
       id: 2,
-      icon: "assets/globe.png",
+      icon: process.env.PUBLIC_URL + "/assets/globe.png",
       title: "Mobile Application",
       desc: "Entwicklung leistungsstarker und intuitiver Apps für iOS und Android.",
       img: "https://via.placeholder.com/300x200?text=Web+Design",
     },
     {
       id: 3,
-      icon: "assets/writing.png",
+      icon: process.env.PUBLIC_URL + "/assets/writing.png",
       title: "Branding",
       desc: "Kreatives Branding für einen starken und einprägsamen Markenauftritt.",
       img: "https://via.placeholder.com/300x200?text=Content",
@@ -40,7 +40,7 @@ export default function Works() {
         style={{ transform: `translateX(-${currentSlide * 100}vw)` }}
       >
         {data.map((d) => (
-          <div className="container">
+          <div className="container" key={d.id}>
             <div className="item">
               <div className="left">
                 <div className="leftContainer">
@@ -63,13 +63,13 @@ export default function Works() {
         ))}
       </div>
       <img
-        src="assets/arrow.png"
+        src={process.env.PUBLIC_URL + "/assets/arrow.png"}
         className="arrow left"
         alt=""
         onClick={() => handleclick("left")}
       />
       <img
-        src="assets/arrow.png"
+        src={process.env.PUBLIC_URL + "/assets/arrow.png"}
         className="arrow right"
         alt=""
         onClick={() => handleclick("right")}

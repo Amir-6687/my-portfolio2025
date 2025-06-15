@@ -7,7 +7,7 @@ export default function Testimonials() {
       name: "Tina Durden",
       title: "Senior Developer",
       img: "https://media.istockphoto.com/id/1135381120/de/foto/portr%C3%A4t-einer-jungen-frau-im-freien-l%C3%A4chelnd.jpg?s=612x612&w=0&k=20&c=k0haRQxgOyOBLPrTszN2TH7y2Xm1MmQLS2Ha5I59J4A=",
-      icon: "assets/twitter.png",
+      icon: process.env.PUBLIC_URL + "/assets/twitter.png",
       desc: "Modernes und responsives Webdesign für eine optimale Benutzererfahrung.",
     },
     {
@@ -15,7 +15,7 @@ export default function Testimonials() {
       name: "Alex Kalinski",
       title: "Co-Founder of DELKA",
       img: "https://goldhouse.warszawa.pl/wp-content/uploads/2020/06/agent-3.jpg",
-      icon: "assets/youtube.png",
+      icon: process.env.PUBLIC_URL + "/assets/youtube.png",
       desc: "Entwicklung leistungsstarker und intuitiver Apps für iOS und Android.",
       featured: true,
     },
@@ -24,7 +24,7 @@ export default function Testimonials() {
       name: "Martin Harold",
       title: "CEO od ALBI",
       img: "https://lead-academy.org/wp-content/uploads/2022/10/2-418.jpg",
-      icon: "assets/linkedin.png",
+      icon: process.env.PUBLIC_URL + "/assets/linkedin.png",
       desc: "Kreatives Branding für einen starken und einprägsamen Markenauftritt.",
     },
   ];
@@ -34,7 +34,7 @@ export default function Testimonials() {
       <h1>Testimonials</h1>
       <div className="container">
         {data.map((d) => (
-          <div className={d.featured ? "card featured" : "card"}>
+          <div className={d.featured ? "card featured" : "card"} key={d.id}>
             <div className="top">
               <img src="assets/right-arrow.png" className="left" alt="" />
               <img className="user" src={d.img} alt="" />

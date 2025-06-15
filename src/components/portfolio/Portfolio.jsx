@@ -6,7 +6,7 @@ import {
   webPortfolio,
   mobilePortfolio,
   designPortfolio,
-  contentPortfolio,
+  // contentPortfolio,
 } from "../../data";
 export default function Portfolio() {
   const [selected, setSelected] = useState("featured");
@@ -49,7 +49,8 @@ export default function Portfolio() {
         setData(designPortfolio);
         break;
       case "content":
-
+        setData([]);
+        break;
       default:
         setData(featuredPortfolio);
     }
@@ -61,6 +62,7 @@ export default function Portfolio() {
       <ul>
         {list.map((item) => (
           <PortfolioList
+            key={item.id}
             title={item.title}
             active={selected === item.id}
             setSelected={setSelected}
@@ -70,7 +72,7 @@ export default function Portfolio() {
       </ul>
       <div className="container">
         {data.map((d) => (
-          <div className="item">
+          <div className="item" key={d.id}>
             <img src={d.img} alt="" />
             <h3>{d.title}</h3>
           </div>
