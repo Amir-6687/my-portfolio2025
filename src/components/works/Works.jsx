@@ -7,23 +7,26 @@ export default function Works() {
     {
       id: 1,
       icon: process.env.PUBLIC_URL + "/assets/mobile.png",
-      title: "Web Design",
-      desc: "Modernes und responsives Webdesign für eine optimale Benutzererfahrung.",
-      img: "https://via.placeholder.com/300x200?text=Mobile+App",
+      title: "Nike Store",
+      desc: "Professioneller Online-Shop mit Warenkorb und Bestellfunktionen.",
+      img: process.env.PUBLIC_URL + "/assets/Nike.jpg",
+      link: "https://amir-6687.github.io/ecommerce/",
     },
     {
       id: 2,
       icon: process.env.PUBLIC_URL + "/assets/globe.png",
-      title: "Mobile Application",
-      desc: "Entwicklung leistungsstarker und intuitiver Apps für iOS und Android.",
-      img: "https://via.placeholder.com/300x200?text=Web+Design",
+      title: "Tarkhineh",
+      desc: "Restaurant-Website mit Speisekarte, Galerie und Kontaktformular.",
+      img: process.env.PUBLIC_URL + "/assets/Tarkhineh.png",
+      link: "https://amir-6687.github.io/Tarkhineh/",
     },
     {
       id: 3,
       icon: process.env.PUBLIC_URL + "/assets/writing.png",
-      title: "Branding",
-      desc: "Kreatives Branding für einen starken und einprägsamen Markenauftritt.",
-      img: "https://via.placeholder.com/300x200?text=Content",
+      title: "Amir Estate",
+      desc: "Kauf- und Verkaufsplattform für Immobilien mit Filtersystem.",
+      img: process.env.PUBLIC_URL + "/assets/Amir.jpg",
+      link: "https://amir-estate.netlify.app/",
     },
   ];
 
@@ -49,14 +52,19 @@ export default function Works() {
                   </div>
                   <h2>{d.title}</h2>
                   <p>{d.desc}</p>
-                  <span>Projects</span>
+                  <span
+                    onClick={() =>
+                      window.open(d.link, "_blank", "noopener,noreferrer")
+                    }
+                  >
+                    Projekt ansehen
+                  </span>
                 </div>
               </div>
               <div className="right">
-                <img
-                  src="https://cdn.dribbble.com/userupload/14918242/file/original-b5341549c0511f82048d94a7d1775b2d.jpg?format=webp&resize=400x300&vertical=center"
-                  alt=""
-                />
+                <div className="right">
+                  <img src={d.img} alt={d.title} />
+                </div>
               </div>
             </div>
           </div>
