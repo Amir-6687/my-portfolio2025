@@ -14,7 +14,7 @@ export default function Testimonials() {
       id: 2,
       name: "Alex Kalinski",
       title: "Co-Founder of DELKA",
-      img: "https://goldhouse.warszawa.pl/wp-content/uploads/2020/06/agent-3.jpg",
+      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5m7QHaKYers25wUwqGyVUDRnc2UnPiLhoWA&s",
       icon: process.env.PUBLIC_URL + "/assets/youtube.png",
       desc: "Entwicklung leistungsstarker und intuitiver Apps für iOS und Android.",
       featured: true,
