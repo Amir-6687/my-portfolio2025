@@ -1,0 +1,85 @@
+@import "../../global.scss";
+
+.contact {
+  background-color: white;
+  display: flex;
+
+  @include mobile {
+    flex-direction: column;
+  }
+
+  .left {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    align-items: center; // وسط‌چینی عمودی
+    justify-content: center; // وسط‌چینی افقی
+
+    img {
+      height: auto;
+      width: 80%; // یا هر مقداری که بخوای
+      object-fit: contain;
+    }
+  }
+
+  .right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h2 {
+      font-size: 30px;
+    }
+
+    form {
+      width: 70%;
+      height: 70%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+
+      input {
+        width: 350px;
+        height: 35px;
+        font-size: 16px;
+
+        @include mobile {
+          width: 200px;
+          height: 20px;
+        }
+      }
+
+      textarea {
+        width: 350px;
+        height: 200px;
+        font-size: 16px;
+
+        @include mobile {
+          width: 200px;
+          height: 100px;
+        }
+      }
+
+      button {
+        width: 150px;
+        height: 30px;
+        color: white;
+        background-color: crimson;
+        border: none;
+        border-radius: 5px;
+        font-weight: 500;
+        cursor: pointer;
+
+        &:focus {
+          outline: none;
+        }
+      }
+      span {
+        color: green;
+      }
+    }
+  }
+}

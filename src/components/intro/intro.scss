@@ -1,0 +1,177 @@
+@import "../../global.scss";
+
+// Global ityped styles
+.ityped-cursor {
+  font-size: inherit !important;
+  line-height: inherit !important;
+  height: auto !important;
+  vertical-align: baseline !important;
+}
+
+.intro {
+  background-color: white;
+  display: flex;
+
+  @include mobile {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+  }
+
+  .left {
+    flex: 0.5;
+    overflow: hidden;
+
+    .imageContainer {
+      width: 700px; // از فایل دوم گرفته شده
+      height: 700px; // از فایل دوم گرفته شده
+      background-color: crimson;
+      border-radius: 50%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      float: right;
+
+      @include desktop {
+        width: 700px;
+        height: 700px;
+      }
+
+      @include mobile {
+        width: 300px;
+        height: 300px;
+        align-items: center;
+        justify-content: center;
+        margin: 20px auto;
+        float: none;
+      }
+    }
+
+    img {
+      height: 90%;
+
+      @include mobile {
+        height: 80%;
+        width: auto;
+        object-fit: cover;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  .right {
+    flex: 0.5;
+    position: relative;
+
+    .wrapper {
+      width: 100%;
+      height: 100%;
+      padding-left: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      @include mobile {
+        padding-left: 0;
+        align-items: center;
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      h1 {
+        font-size: 60px; // از فایل دوم گرفته شده
+        margin: 10px 0;
+
+        @include mobile {
+          font-size: 40px;
+        }
+      }
+      h2 {
+        font-size: 35px; // از فایل دوم گرفته شده
+      }
+      h3 {
+        font-size: 30px; // از فایل دوم گرفته شده
+
+        @include desktop {
+          font-size: 30px;
+
+          .ityped-cursor {
+            font-size: 30px;
+            line-height: 1;
+            height: auto;
+          }
+        }
+
+        @include mobile {
+          font-size: 20px;
+
+          .ityped-cursor {
+            font-size: 20px;
+            line-height: 1;
+            height: auto;
+          }
+        }
+
+        span {
+          font-size: inherit;
+          color: crimson;
+          white-space: nowrap;
+          overflow: hidden;
+        }
+
+        .ityped-cursor {
+          animation: blink 1s infinite;
+          font-size: inherit !important;
+          line-height: inherit !important;
+          vertical-align: baseline !important;
+          color: crimson !important;
+          display: inline !important;
+          height: auto !important;
+          font-weight: normal !important;
+          margin-left: 2px;
+          position: relative !important;
+          top: 0 !important;
+        }
+
+        @keyframes blink {
+          0% {
+            opacity: 1;
+          }
+          50% {
+            opacity: 0;
+          }
+          100% {
+            opacity: 1;
+          }
+        }
+      }
+    }
+    a {
+      position: absolute;
+      bottom: 10px;
+      left: 35%;
+
+      @include mobile {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      img {
+        width: 30px;
+        animation: arrowBlink 2s infinite;
+
+        @include mobile {
+          width: 25px;
+        }
+      }
+
+      @keyframes arrowBlink {
+        100% {
+          opacity: 0;
+        }
+      }
+    }
+  }
+}
