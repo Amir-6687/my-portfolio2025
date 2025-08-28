@@ -81,14 +81,16 @@ export default function Works() {
           </div>
         ))}
       </div>
-      <HiChevronLeft
-        className="arrow left"
-        onClick={() => handleclick("left")}
-      />
-      <HiOutlineChevronRight
-        className="arrow right"
-        onClick={() => handleclick("right")}
-      />
+      <div className="arrow-container">
+        <HiChevronLeft
+          className="arrow left"
+          onClick={() => handleclick("left")}
+        />
+        <HiOutlineChevronRight
+          className="arrow right"
+          onClick={() => handleclick("right")}
+        />
+      </div>
     </div>
   );
 }
