@@ -78,7 +78,7 @@
         align-items: center;
         text-align: center;
         margin-top: 0;
-        margin-bottom: 40px;
+        margin-bottom: 60px;
         flex: 1;
         justify-content: center;
       }
@@ -161,7 +161,7 @@
         bottom: auto;
         left: auto;
         transform: none;
-        margin-top: 20px;
+        margin-top: 50px;
         display: block;
         text-align: center;
       }
@@ -171,7 +171,7 @@
         animation: arrowBlink 2s infinite;
 
         @include mobile {
-          width: 35px;
+          width: 45px;
         }
       }
 
