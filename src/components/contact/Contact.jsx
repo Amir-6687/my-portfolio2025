@@ -10,15 +10,18 @@ export default function Contact() {
   return (
     <div className="contact" id="contact">
       <div className="left">
-        <img src={process.env.PUBLIC_URL + "/assets/shake04.png"} alt="" />
+        <img
+          src={process.env.PUBLIC_URL + "/assets/shake04.png"}
+          alt="Contact illustration"
+        />
       </div>
       <div className="right">
         <h2>Contact.</h2>
         <form onSubmit={handleSubmit}>
-          <input type="text" placeholder="Email" />
-          <textarea placeholder="Message"></textarea>
+          <input type="email" placeholder="Email" required />
+          <textarea placeholder="Message" required></textarea>
           <button type="submit">Send</button>
-          {message && <span>Thanks, I'll replay ASAP !</span>}
+          {message && <span>Thanks, I'll reply ASAP!</span>}
         </form>
       </div>
     </div>

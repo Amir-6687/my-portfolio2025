@@ -6,18 +6,32 @@ export default function Intro() {
   const textRef = useRef();
 
   useEffect(() => {
-    init(textRef.current, {
+    const instance = init(textRef.current, {
       showCursor: true,
       backDelay: 1500,
       backSpeed: 60,
+      typeSpeed: 100,
+      startDelay: 500,
+      loop: true,
       strings: ["Developer", "Designer", "Content Creator"],
+      cursorChar: "|",
     });
+
+    return () => {
+      if (instance) {
+        instance.destroy();
+      }
+    };
   }, []);
+
   return (
     <div className="intro" id="intro">
       <div className="left">
         <div className="imageContainer">
-          <img src={process.env.PUBLIC_URL + "/assets/amir01.png"} alt="" />
+          <img
+            src={process.env.PUBLIC_URL + "/assets/amir01.png"}
+            alt="Amir Akbari - Developer and Designer"
+          />
         </div>
       </div>
       <div className="right">
@@ -29,7 +43,10 @@ export default function Intro() {
           </h3>
         </div>
         <a href="#portfolio">
-          <img src={process.env.PUBLIC_URL + "/assets/down.png"} alt="" />
+          <img
+            src={process.env.PUBLIC_URL + "/assets/down.png"}
+            alt="Scroll down to portfolio section"
+          />
         </a>
       </div>
     </div>

@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { HiOutlineChevronRight } from "react-icons/hi2";
+import { HiChevronLeft } from "react-icons/hi2";
 import "./works.scss";
 
 export default function Works() {
@@ -8,7 +10,7 @@ export default function Works() {
       id: 1,
       icon: process.env.PUBLIC_URL + "/assets/mobile.png",
       title: "Nike Store",
-      desc: "Professioneller Online-Shop mit Warenkorb und Bestellfunktionen.",
+      desc: "Professional e-commerce website with shopping cart and order management features.",
       img: process.env.PUBLIC_URL + "/assets/Nike.jpg",
       link: "https://amir-6687.github.io/ecommerce/",
     },
@@ -16,7 +18,7 @@ export default function Works() {
       id: 2,
       icon: process.env.PUBLIC_URL + "/assets/globe.png",
       title: "Tarkhineh",
-      desc: "Restaurant-Website mit Speisekarte, Galerie und Kontaktformular.",
+      desc: "Restaurant website with menu, gallery and contact form.",
       img: process.env.PUBLIC_URL + "/assets/Tarkhineh.png",
       link: "https://amir-6687.github.io/Tarkhineh/",
     },
@@ -24,15 +26,23 @@ export default function Works() {
       id: 3,
       icon: process.env.PUBLIC_URL + "/assets/writing.png",
       title: "Amir Estate",
-      desc: "Kauf- und Verkaufsplattform für Immobilien mit Filtersystem.",
+      desc: "Buy and sell platform for real estate with advanced filtering system.",
       img: process.env.PUBLIC_URL + "/assets/Amir.jpg",
       link: "https://amir-estate.netlify.app/",
+    },
+    {
+      id: 4,
+      icon: process.env.PUBLIC_URL + "/assets/writing.png",
+      title: "The Girl's Club",
+      desc: "Modern community website with interactive features, blog and event management.",
+      img: process.env.PUBLIC_URL + "/assets/Girl's-Club-Logo.png",
+      link: "https://thegrrrlsclub.de/",
     },
   ];
 
   const handleclick = (way) => {
     way === "left"
-      ? setCurrentSlide(currentSlide > 0 ? currentSlide - 1 : 2)
+      ? setCurrentSlide(currentSlide > 0 ? currentSlide - 1 : data.length - 1)
       : setCurrentSlide(currentSlide < data.length - 1 ? currentSlide + 1 : 0);
   };
 
@@ -48,38 +58,35 @@ export default function Works() {
               <div className="left">
                 <div className="leftContainer">
                   <div className="imgContainer">
-                    <img src={d.icon} alt="" />
+                    <img src={d.icon} alt={`${d.title} project icon`} />
                   </div>
                   <h2>{d.title}</h2>
                   <p>{d.desc}</p>
-                  <span
+                  <button
+                    className="view-project-btn"
                     onClick={() =>
                       window.open(d.link, "_blank", "noopener,noreferrer")
                     }
                   >
-                    Projekt ansehen
-                  </span>
+                    View Project
+                  </button>
                 </div>
               </div>
               <div className="right">
                 <div className="right">
-                  <img src={d.img} alt={d.title} />
+                  <img src={d.img} alt={`${d.title} project screenshot`} />
                 </div>
               </div>
             </div>
           </div>
         ))}
       </div>
-      <img
-        src={process.env.PUBLIC_URL + "/assets/arrow.png"}
+      <HiChevronLeft
         className="arrow left"
-        alt=""
         onClick={() => handleclick("left")}
       />
-      <img
-        src={process.env.PUBLIC_URL + "/assets/arrow.png"}
+      <HiOutlineChevronRight
         className="arrow right"
-        alt=""
         onClick={() => handleclick("right")}
       />
     </div>

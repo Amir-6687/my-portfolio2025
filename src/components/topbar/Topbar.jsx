@@ -20,11 +20,16 @@ export default function Topbar({ menuOpen, setMenuOpen }) {
         </div>
 
         <div className="right">
-          <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+          <button
+            className="hamburger"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle navigation menu"
+            aria-expanded={menuOpen}
+          >
             <span className="line1"></span>
             <span className="line2"></span>
             <span className="line3"></span>
-          </div>
+          </button>
         </div>
       </div>
     </div>

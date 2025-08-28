@@ -7,24 +7,25 @@ import Contact from "./components/contact/Contact";
 import "./app.scss";
 import { useState } from "react";
 import Menu from "./components/menu/Menu";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  console.log("Deploy test");
-
   return (
-    <div className="app">
-      <Topbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-      <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-      <div className="sections">
-        <Intro />
-        <Portfolio />
-        <Works />
-        <Testimonials />
-        <Contact />
+    <ErrorBoundary>
+      <div className="app">
+        <Topbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+        <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+        <div className="sections">
+          <Intro />
+          <Portfolio />
+          <Works />
+          <Testimonials />
+          <Contact />
+        </div>
       </div>
-    </div>
+    </ErrorBoundary>
   );
 }
 
