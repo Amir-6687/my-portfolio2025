@@ -3,11 +3,17 @@
 .works {
   background-color: crimson;
   min-height: 100vh;
-  overflow-y: auto;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+
+  @include mobile {
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+  }
 
   .arrow-container {
     position: absolute;
@@ -85,8 +91,8 @@
       justify-content: center;
       align-items: center;
       min-height: 600px;
-      position: relative;
-      left: auto;
+      position: absolute;
+      left: 0;
     }
 
     .container {
