@@ -17,7 +17,8 @@
     align-items: center;
     padding: 20px 0;
     min-height: 100vh;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-top: 40px;
   }
 
   .left {
@@ -78,9 +79,10 @@
         align-items: center;
         text-align: center;
         margin-top: 0;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
         flex: 1;
-        justify-content: center;
+        justify-content: flex-start;
+        padding-top: 20px;
       }
 
       h1 {
@@ -161,7 +163,7 @@
         bottom: auto;
         left: auto;
         transform: none;
-        margin-top: 15px;
+        margin-top: 5px;
         display: block;
         text-align: center;
       }
