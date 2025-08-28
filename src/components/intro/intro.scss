@@ -16,6 +16,8 @@
     flex-direction: column;
     align-items: center;
     padding: 20px 0;
+    min-height: 100vh;
+    justify-content: center;
   }
 
   .left {
@@ -75,7 +77,10 @@
         padding-left: 0;
         align-items: center;
         text-align: center;
-        margin-top: 20px;
+        margin-top: 0;
+        margin-bottom: 40px;
+        flex: 1;
+        justify-content: center;
       }
 
       h1 {
@@ -152,10 +157,13 @@
       left: 35%;
 
       @include mobile {
-        position: absolute;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
+        position: relative;
+        bottom: auto;
+        left: auto;
+        transform: none;
+        margin-top: 20px;
+        display: block;
+        text-align: center;
       }
 
       img {
@@ -163,7 +171,7 @@
         animation: arrowBlink 2s infinite;
 
         @include mobile {
-          width: 25px;
+          width: 35px;
         }
       }
 
