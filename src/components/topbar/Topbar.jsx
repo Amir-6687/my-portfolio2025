@@ -11,11 +11,11 @@ export default function Topbar({ menuOpen, setMenuOpen }) {
           </a>
           <div className="itemContainer">
             <Person className="icon" />
-            <span>+49 123 45 67</span>
+            <span>+49 176 3173 2291</span>
           </div>
           <div className="itemContainer">
             <Mail className="icon" />
-            <span>mail@gmail.com</span>
+            <span>amir.hossein.akbari59@gmail.com</span>
           </div>
         </div>
 

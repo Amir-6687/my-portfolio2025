@@ -5,6 +5,7 @@ import Works from "./components/works/Works";
 import Testimonials from "./components/testimonials/Testimonials";
 import Contact from "./components/contact/Contact";
 import BottomNav from "./components/bottomNav/BottomNav";
+import WhatsAppButton from "./components/whatsappButton/WhatsAppButton";
 import "./app.scss";
 import { useState } from "react";
 import Menu from "./components/menu/Menu";
@@ -26,6 +27,7 @@ function App() {
           <Contact />
         </div>
         <BottomNav />
+        <WhatsAppButton />
       </div>
     </ErrorBoundary>
   );
