@@ -1,3 +1,5 @@
+@import "./global.scss";
+
 .app {
   height: 100vh;
 
@@ -21,6 +23,7 @@
       scroll-behavior: smooth;
       padding-top: 0;
       margin-top: 0;
+      padding-bottom: 80px;
     }
 
     > * {
@@ -33,6 +36,7 @@
         min-height: 100vh;
         padding-top: 20px;
         margin-top: 0;
+        margin-bottom: 20px;
       }
     }
   }
