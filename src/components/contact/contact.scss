@@ -81,6 +81,7 @@
         padding: 8px 12px;
         border: 1px solid #ddd;
         border-radius: 5px;
+        margin-bottom: 5px;
 
         @include mobile {
           width: 250px;
@@ -97,6 +98,7 @@
         border: 1px solid #ddd;
         border-radius: 5px;
         resize: vertical;
+        margin-bottom: 5px;
 
         @include mobile {
           width: 250px;
@@ -117,9 +119,15 @@
         font-size: 14px;
         transition: all 0.2s ease;
 
-        &:hover {
+        &:hover:not(:disabled) {
           background-color: #b91c1c;
           transform: translateY(-2px);
+        }
+
+        &:disabled {
+          background-color: #ccc;
+          cursor: not-allowed;
+          transform: none;
         }
 
         &:focus {
@@ -134,12 +142,19 @@
       }
 
       span {
-        color: green;
         font-size: 14px;
         margin-top: 10px;
 
         @include mobile {
           font-size: 12px;
+        }
+
+        &.success {
+          color: green;
+        }
+
+        &.error {
+          color: red;
         }
       }
     }
