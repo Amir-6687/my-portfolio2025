@@ -10,6 +10,11 @@
   z-index: 3;
   transition: all 1s ease;
 
+  @include mobile {
+    height: 70px;
+    z-index: 1000;
+  }
+
   .wrapper {
     padding: 10px 30px;
     display: flex;
