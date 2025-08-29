@@ -21,6 +21,8 @@
     height: 100%;
     pointer-events: none;
     z-index: 10;
+    top: 0;
+    left: 0;
   }
 
   .arrow {
@@ -31,17 +33,11 @@
     transition: all 0.3s ease;
     z-index: 10;
     pointer-events: auto;
+    top: 50%;
+    transform: translateY(-50%);
 
     @include desktop {
       font-size: 60px;
-
-      &.left {
-        left: 120px;
-      }
-
-      &.right {
-        right: 120px;
-      }
     }
 
     @include mobile {
@@ -58,6 +54,10 @@
       left: 100px;
       font-weight: bold;
 
+      @include desktop {
+        left: 120px;
+      }
+
       @include mobile {
         left: 20px;
         font-weight: bold;
@@ -67,6 +67,10 @@
     &.right {
       right: 100px;
 
+      @include desktop {
+        right: 120px;
+      }
+
       @include mobile {
         right: 20px;
       }
@@ -74,7 +78,7 @@
 
     &:hover {
       color: #f0f0f0;
-      transform: scale(1.1);
+      transform: translateY(-50%) scale(1.1);
     }
   }
 
