@@ -6,20 +6,55 @@ export default function Intro() {
   const textRef = useRef();
 
   useEffect(() => {
-    const instance = init(textRef.current, {
-      showCursor: true,
-      backDelay: 1500,
-      backSpeed: 60,
-      typeSpeed: 100,
-      startDelay: 500,
-      loop: true,
-      strings: ["Developer", "Designer", "Content Creator"],
-      cursorChar: "|",
-    });
+    let instance = null;
+    let timeoutId = null;
+
+    // تاخیر کوتاه برای اطمینان از render کامل
+    timeoutId = setTimeout(() => {
+      if (textRef.current) {
+        // پاک کردن کامل محتوای قبلی
+        textRef.current.innerHTML = "";
+
+        // توقف تمام انیمیشن‌های قبلی
+        const existingCursor = textRef.current.querySelector(".ityped-cursor");
+        if (existingCursor) {
+          existingCursor.remove();
+        }
+
+        instance = init(textRef.current, {
+          showCursor: true,
+          backDelay: 1500,
+          backSpeed: 60,
+          typeSpeed: 100,
+          startDelay: 500,
+          loop: true,
+          strings: ["Developer", "Designer", "Content Creator"],
+          cursorChar: "|",
+        });
+      }
+    }, 100);
 
     return () => {
+      // پاک کردن timeout
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+
+      // پاک کردن instance
       if (instance) {
-        instance.destroy();
+        try {
+          if (typeof instance.destroy === "function") {
+            instance.destroy();
+          }
+        } catch (error) {
+          console.log("Error destroying ityped instance:", error);
+        }
+      }
+
+      // پاک کردن کامل محتوا
+      if (textRef.current) {
+        textRef.current.innerHTML = "";
+        textRef.current.textContent = "";
       }
     };
   }, []);
